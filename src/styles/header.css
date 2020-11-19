@@ -1,16 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
-
-/*.container{
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-div > h1 {
-    color: #fff;
-    font-family: 'Libre Baskerville', serif;
-}*/
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital@1&display=swap');
 
 
 .hero-picture{
@@ -26,6 +15,109 @@ div > h1 {
 .hero-text {
     text-align: center;
     color: #fff;
-    font-family: 'Libre Baskerville', serif;
     margin: 0 auto;
   }
+
+.main-title{
+    font-family: 'Marck Script', cursive;
+    font-weight: 500;
+    display: inline;
+    font-size: 8rem;
+    color: #c59d5f;
+}
+
+.main-title p{
+    display: inline-block;
+    margin: 0;
+}
+
+
+p[class^="title-letter-animation"] {
+    opacity: 0;
+}
+
+.title-letter-animation-1{
+    animation: showUp 500ms forwards;
+    animation-delay: 300ms;
+}
+.title-letter-animation-2{
+    animation: showUp 500ms forwards;
+    animation-delay: 1300ms;
+}
+.title-letter-animation-3{
+    animation: showUp 500ms forwards;
+    animation-delay: 800ms;
+}
+.title-letter-animation-4{
+    animation: showUp 500ms forwards;
+    animation-delay: 1800ms;
+}
+.title-letter-animation-5{
+    animation: showUp 500ms forwards;
+    animation-delay: 1500ms;
+}
+.title-letter-animation-6{
+    animation: showUp 500ms forwards;
+    animation-delay: 1800ms;
+}
+
+
+
+.slogan{
+    font-family: 'Amiri', serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-left: 12rem;
+    margin-top: -.8rem;
+    opacity: 0;
+    animation: fadeLeft 2s forwards;
+    animation-delay: 2s;
+}
+
+.arrow-icon{
+    position: absolute;
+    bottom: 0;
+    font-size: 2rem;
+    left: 50%;
+    bottom: 5rem;
+    animation: moveDown 2500ms infinite;
+    opacity: 0;
+    animation-delay: 3500ms;
+}
+
+.arrow-icon > a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+@keyframes moveDown{
+    from{
+        transform: translateY(0,0);
+        opacity: 1;
+    }
+    to{
+        transform: translateY(3rem);
+        opacity: 0;
+    }
+}
+
+
+@keyframes fadeLeft{
+    from{
+        transform: translateX(20rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+
+@keyframes showUp{
+    to{
+        opacity: 1;
+    }
+}
