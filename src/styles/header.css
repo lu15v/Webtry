@@ -4,12 +4,6 @@
 
 .hero-picture{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/hero.jpg");
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    text-align: center;
 }
 
 .hero-text {
@@ -19,7 +13,7 @@
   }
 
 .main-title{
-    font-family: 'Marck Script', cursive;
+    font-family: var(--secondary-font);
     font-weight: 500;
     display: inline;
     font-size: 8rem;
@@ -64,7 +58,7 @@ p[class^="title-letter-animation"] {
 
 
 .slogan{
-    font-family: 'Amiri', serif;
+    font-family: var(--main-font);
     font-weight: 600;
     font-size: 18px;
     letter-spacing: 2px;

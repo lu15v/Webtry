@@ -8,7 +8,7 @@ import '../styles/header.css';
 const Header = () =>{
 
     return(
-        <div className="hero-picture">
+        <div className="hero hero-picture">
             <div className="hero-text">
                 <h1 className="main-title">
                     <p className="title-letter-animation-1">W</p>
