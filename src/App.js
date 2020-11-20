@@ -1,5 +1,5 @@
 import './App.css';
-import Header from './components/header';
+import MainSection from './components/main-section';
 import Navbar from './components/navbar';
 import {MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -20,7 +20,7 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <div className="App">
-        <Header/>
+        <MainSection/>
         <Navbar/>
       </div>
     </MuiThemeProvider>
