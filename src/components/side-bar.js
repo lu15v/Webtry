@@ -15,7 +15,7 @@ const useStyles =  makeStyles(() => ({
   listContainer: {
     position: 'fixed',
     top: '4rem',
-    backgroundColor: '#000005',
+    backgroundColor: '#272c34',
     height: '100%',
     width: 500,
     color: "#fff",
