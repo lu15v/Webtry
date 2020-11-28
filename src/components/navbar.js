@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -7,9 +7,10 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import SideBar from './side-bar';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+   root: {
     flexGrow: 1,
     position: 'absolute',
     width:'100%',
@@ -69,12 +70,20 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar() {
   const classes = useStyles();
+  const ref = useRef(null);
+
+
+  const handleClick  = () =>{
+    ref.current.exToggleDrawer(true)
+  }
+
 
   return (
     <div className={classes.root}>
       <AppBar>
         <Toolbar>
         <IconButton
+            onClick={handleClick}
             edge="start"
             className={classes.menuButton}
             color="inherit"
@@ -99,6 +108,7 @@ export default function NavBar() {
         </div>
         </Toolbar>
       </AppBar>
+      <SideBar ref={ref}/>
     </div>
   );
 }
