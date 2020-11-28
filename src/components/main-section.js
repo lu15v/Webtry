@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 
-import '../styles/header.css';
+import '../styles/main-section.css';
 
 const MainSection = () =>{
 
