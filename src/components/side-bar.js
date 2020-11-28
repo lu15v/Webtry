@@ -1,6 +1,6 @@
-import React,{useState, useImperativeHandle, forwardRef} from "react";
+import React from "react";
 import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
@@ -9,14 +9,17 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
-import CloseIcon from '@material-ui/icons/Close';
 
 const useStyles =  makeStyles(() => ({
+
   listContainer: {
-    backgroundColor: '#00001e',
+    position: 'fixed',
+    top: '4rem',
+    backgroundColor: '#000005',
     height: '100%',
     width: 500,
-    color: "#fff"
+    color: "#fff",
+    fontFamily: 'var(--secondary-font)'
   },
   list: {
     paddingLeft: '8px'
@@ -46,15 +49,9 @@ const useStyles =  makeStyles(() => ({
   }
 }));
 
-const SideBar = forwardRef((props, ref) => { 
+const SideBar = (props) =>{
   const classes = useStyles();
-  const theme = useTheme();
-  console.log(theme)
-  //const{toggleDrawer, show} = props;
-
-  const [state, setState] = useState({
-    show: false
-  });
+  const {show, setShow} = props;
 
   const toggleDrawer = open => (event) => {
     console.log(open)
@@ -65,18 +62,9 @@ const SideBar = forwardRef((props, ref) => {
     ) {
       return;
     }
-
-    setState({ ...state, show: open });
+    setShow(open);
   };
-  const exToggleDrawer = (open) =>{
-    setState({ ...state, show: open });
-  }
-  useImperativeHandle(ref, () => {
-    return {
-      exToggleDrawer: exToggleDrawer
-    };
-  });
-
+ 
   const list = () => (
     <div
       className={clsx(classes.listContainer)}
@@ -84,12 +72,6 @@ const SideBar = forwardRef((props, ref) => {
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
-      <div className={clsx(classes.closeIconContainer)}>
-        <CloseIcon
-          className={clsx(classes.closeIcon)}
-
-        />
-      </div>
       <List
         className={clsx(classes.list)}
       >
@@ -123,18 +105,15 @@ const SideBar = forwardRef((props, ref) => {
   );
 
   return (
-    <div>
-      <React.Fragment key={"side-bar"}>
-        <SwipeableDrawer
-          open={state.show}
-          onClose={toggleDrawer(false)}
-          onOpen={toggleDrawer(true)}
-        >
-          {list()}
-        </SwipeableDrawer>
-      </React.Fragment>
-    </div>
+    <SwipeableDrawer
+      open={show}
+      onClose={toggleDrawer(false)}
+      onOpen={toggleDrawer(true)}
+      transitionDuration={300}
+    >
+      {list()}
+    </SwipeableDrawer>
   );
-});
+};
 
 export default SideBar;

@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useState} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -7,6 +7,7 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import CloseIcon from '@material-ui/icons/Close';
 import SideBar from './side-bar';
 
 const useStyles = makeStyles((theme) => ({
@@ -18,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    cursor: 'pointer',
   },
   title: {
     flexGrow: 1,
@@ -70,25 +72,19 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar() {
   const classes = useStyles();
-  const ref = useRef(null);
-
-
-  const handleClick  = () =>{
-    ref.current.exToggleDrawer(true)
-  }
-
+  const [isDrawerActive, setIsDrawerActive] = useState(false);
 
   return (
     <div className={classes.root}>
       <AppBar>
         <Toolbar>
         <IconButton
-            onClick={handleClick}
+            onClick={() => setIsDrawerActive(true)}
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer">
-            <MenuIcon />
+            { isDrawerActive ? <CloseIcon/> : <MenuIcon />}
         </IconButton>
         <Typography className={classes.title} variant="h6" noWrap>
             Webtry
@@ -108,7 +104,7 @@ export default function NavBar() {
         </div>
         </Toolbar>
       </AppBar>
-      <SideBar ref={ref}/>
+      <SideBar show={isDrawerActive} setShow={setIsDrawerActive}/>
     </div>
   );
 }
