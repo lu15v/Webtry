@@ -8,7 +8,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';
-import SideBar from './side-bar';
+// import SideBar from './side-bar';
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -78,14 +78,14 @@ export default function NavBar() {
     <div className={classes.root}>
       <AppBar>
         <Toolbar>
-        <IconButton
+        {/* <IconButton
             onClick={() => setIsDrawerActive(true)}
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer">
             { isDrawerActive ? <CloseIcon/> : <MenuIcon />}
-        </IconButton>
+        </IconButton> */}
         <Typography className={classes.title} variant="h6" noWrap>
             Webtry
         </Typography>
@@ -104,7 +104,7 @@ export default function NavBar() {
         </div>
         </Toolbar>
       </AppBar>
-      <SideBar show={isDrawerActive} setShow={setIsDrawerActive}/>
+      {/* <SideBar show={isDrawerActive} setShow={setIsDrawerActive}/> */}
     </div>
   );
 }

@@ -3,12 +3,39 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+
+const barOptions = [
+  {
+    'name' : 'Para el alma',
+    'compoment': [
+      {
+        'title': 'Demo Poem',
+        'date': '01/01/2021',
+        'body': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
+      },
+      {
+        'title': 'Demo Poem 2',
+        'date': '01/01/2021',
+        'body': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
+      },
+      {
+        'title': 'Demo Poem 3',
+        'date': '01/01/2021',
+        'body': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
+      }
+    ]
+  },
+  {
+    'name' : 'Para el corazon',
+    'compoment': 'demo'
+  }
+
+]
 
 const useStyles =  makeStyles(() => ({
 
@@ -75,29 +102,15 @@ const SideBar = (props) =>{
       <List
         className={clsx(classes.list)}
       >
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}
+        {barOptions.map((obj, index) => (
+          <ListItem button key={obj.name}
             className={clsx(classes.listItem)}
+            // onClick={}
           >
             <ListItemIcon className={clsx(classes.icons)}>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List
-        className={clsx(classes.list)}
-      >
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}
-          className={clsx(classes.listItem)}
-          >
-            <ListItemIcon className={clsx(classes.icons)}>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary={obj.name} />
           </ListItem>
         ))}
       </List>

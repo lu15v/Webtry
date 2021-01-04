@@ -5,23 +5,13 @@ import '../styles/poem-section.css';
 
 const PoemSection = props =>{
 
+    const {poems} = props;
 
     return(
         <div className="hero container">
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
-            <PoemCard/>
+            {poems.map((poem, index) => {
+                return <PoemCard key={poem.title} title={poem.title} body={poem.body} date={poem.date} position={index}/>
+            })}
         </div>
     )
 }

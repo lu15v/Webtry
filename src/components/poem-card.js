@@ -7,9 +7,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
   bullet: {
     display: 'inline-block',
     margin: '0 2px',
@@ -21,28 +18,38 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
+  firstPoemRow: {
+    minWidth: 275,
+    flexShrink: 1,
+    flexGrow: 1,
+    maxWidth: '22%',
+    margin: '4.5rem 0 0 0'
+  },
+  secondPoemRow:{
+    minWidth: 275,
+    flexShrink: 1,
+    flexGrow: 1,
+    maxWidth: '22%',
+    margin: '-9rem 0 0 0'
+  }
 });
 
-export default function PoemCard() {
+export default function PoemCard(props) {
+  const {title, body, date, position} = props;
+
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <Card className={classes.root} variant="outlined">
+    <Card className={position < 4 ?  classes.firstPoemRow : classes.secondPoemRow } variant="outlined">
       <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
-        </Typography>
         <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
+          {title}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
+          {date}
         </Typography>
         <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+          {body}
         </Typography>
       </CardContent>
       <CardActions>
