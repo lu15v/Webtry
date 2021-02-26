@@ -1,34 +1,34 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronRight,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
+import "../styles/presentation.css";
 
-import '../styles/main-section.css';
+const Presentation = ({ setShow }) => {
+  return (
+    <div className="hero hero-picture">
+      <div className="hero-text">
+        <h1 className="main-title">
+          <p className="title-letter-animation-1">W</p>
+          <p className="title-letter-animation-2">e</p>
+          <p className="title-letter-animation-3">b</p>
+          <p className="title-letter-animation-4">t</p>
+          <p className="title-letter-animation-5">r</p>
+          <p className="title-letter-animation-6">y</p>
+        </h1>
+        <p className="slogan">Donde las palabras tocan el alma</p>
 
-const Presentation = () =>{
-
-    return(
-        <div className="hero hero-picture">
-            <div className="hero-text">
-                <h1 className="main-title">
-                    <p className="title-letter-animation-1">W</p>
-                    <p className="title-letter-animation-2">e</p>
-                    <p className="title-letter-animation-3">b</p>
-                    <p className="title-letter-animation-4">t</p>
-                    <p className="title-letter-animation-5">r</p>
-                    <p className="title-letter-animation-6">y</p>
-                </h1>
-                <p className="slogan">Donde las palabras tocan el alma</p>
-                
-                <div className="arrow-icon">
-                    <a>
-                        <FontAwesomeIcon icon={faChevronDown} />
-                    </a>
-                </div>
-            </div>
+        <div className="enter-site-container" onClick={() => setShow()}>
+          <FontAwesomeIcon className="arrow-left" icon={faChevronRight} />
+          <p>Enter to the site</p>
+          <FontAwesomeIcon className="arrow-right" icon={faChevronLeft} />
         </div>
-    )
-}
-
+      </div>
+    </div>
+  );
+};
 
 export default Presentation;

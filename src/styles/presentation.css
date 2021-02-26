@@ -70,7 +70,26 @@ p[class^="title-letter-animation"] {
     animation-delay: 2s;
 }
 
-.arrow-icon{
+div[class$="Circle"]{
+    border: 1px solid #fff;
+    margin: auto;
+}
+
+.bigCircle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: bigScale 2s infinite alternate;
+  }
+  
+  .smallCircle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: smallScale 3s infinite alternate;
+  }
+
+/* .arrow-container{
     position: absolute;
     bottom: 0;
     font-size: 2rem;
@@ -81,11 +100,54 @@ p[class^="title-letter-animation"] {
     animation-delay: 3500ms;
 }
 
-.arrow-icon > a{
+.arrow-container > svg{
     cursor: pointer;
     text-decoration: none;
+}  */
+
+.enter-site-container > p{
+    display: inline-block;
+    font-family: var(--main-font);
+    font-size: 22px;
+    font-weight: 300;
+    opacity: 0;
+    animation: showUp 2s infinite 3s alternate;
+    cursor: pointer;
 }
 
+.enter-site-container > svg{
+    padding: 0 1.5rem;
+    opacity: 0;
+}
+
+svg.arrow-left{
+    animation: arrowLeft 2.5s infinite 4s;
+}
+
+svg.arrow-right{
+    animation: arrowRight 2.5s infinite 4s;
+}
+
+
+@keyframes arrowLeft{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(15px);
+    }
+}
+
+@keyframes arrowRight{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(-15px);
+    }
+}
 
 @keyframes moveDown{
     from{

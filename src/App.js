@@ -1,11 +1,12 @@
-import React from 'react';
-import Presentation from './components/presentation';
+import React from "react";
+
+import MainContent from "./components/main-content";
 
 function App() {
   return (
-      <>
-        <Presentation/>
-      </>
+    <>
+      <MainContent/>
+    </>
   );
 }
 
