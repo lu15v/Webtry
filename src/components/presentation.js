@@ -5,7 +5,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 import '../styles/main-section.css';
 
-const MainSection = () =>{
+const Presentation = () =>{
 
     return(
         <div className="hero hero-picture">
@@ -31,4 +31,4 @@ const MainSection = () =>{
 }
 
 
-export default MainSection;
+export default Presentation;
