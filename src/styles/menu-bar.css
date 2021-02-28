@@ -1,5 +1,6 @@
 .menu-container{
     flex: 1 1;
+    padding-top: 2.5rem;
 }
 
 .ui.tabular.menu .item {
