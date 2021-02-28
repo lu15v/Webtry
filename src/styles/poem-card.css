@@ -1,6 +1,5 @@
 .ui.card {
     margin: 3em 1em 1em 1em !important;
-    align-self: flex-start;  
     width: auto !important;
     max-width: 290px !important;
 }
