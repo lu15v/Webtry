@@ -1,17 +1,11 @@
-import React, { useState } from "react";
-
-import Presentation from "./presentation";
+import React from "react";
 
 const MainContent = () => {
-  const [showPresentation, setShowPresentation] = useState(true);
-
-  return showPresentation ? (
-    <Presentation setShow={setShowPresentation}/>
-  ) : (
+  return(
     <div>
-      <p>this is the main content here</p>
+      
     </div>
-  );
+  )
 };
 
 export default MainContent;
