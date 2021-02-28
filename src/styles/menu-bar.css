@@ -1,0 +1,16 @@
+.menu-container{
+    flex: 1 1;
+}
+
+.ui.tabular.menu .item {
+    color: #E3E2DF !important;
+}
+
+.ui.vertical.tabular.menu {
+    border-right: 1px solid #4E4E50 !important;
+}
+
+.ui.vertical.tabular.menu .active.item {
+    background: #5F021F !important;
+    border-color: transparent !important;
+}

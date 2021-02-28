@@ -113,10 +113,10 @@ div[class$="Circle"]{
     opacity: 0;
     animation: showUp 2s infinite 3s alternate;
     cursor: pointer;
+    padding: 0 1.5rem;
 }
 
 .enter-site-container > svg{
-    padding: 0 1.5rem;
     opacity: 0;
 }
 
