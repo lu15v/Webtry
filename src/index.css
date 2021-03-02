@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital@1&display=swap');
+
 :root{
-  --main-font: 'Amiri', serif;
-  --secondary-font: 'Marck Script', cursive;
-  --body-font: '';
+  --main-title-font: 'Marck Script', cursive;
+  --slogan-font: 'Amiri', serif;
   --background-color: #171B22;
-  --font-color: #C87B23;
+  --font-color: #C59D5F;
+  --select-color: #5F021F;
+  --extra-color: #3C1C39;
 }
 
 div#root{

@@ -12,6 +12,6 @@
 }
 
 .ui.vertical.tabular.menu .active.item {
-    background: #5F021F !important;
+    background: var(--select-color) !important;
     border-color: transparent !important;
 }

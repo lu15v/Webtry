@@ -13,11 +13,11 @@
   }
 
 .main-title{
-    font-family: var(--secondary-font);
+    font-family: var(--main-title-font);
     font-weight: 500;
     display: inline;
     font-size: 8rem;
-    color: #c59d5f;
+    color:var(--font-color);
 }
 
 .main-title p{
@@ -58,7 +58,7 @@ p[class^="title-letter-animation"] {
 
 
 .slogan{
-    font-family: var(--main-font);
+    font-family: var(--slogan-font);
     font-weight: 600;
     font-size: 18px;
     letter-spacing: 2px;
@@ -107,7 +107,7 @@ div[class$="Circle"]{
 
 .enter-site-container > p{
     display: inline-block;
-    font-family: var(--main-font);
+    font-family: var(--slogan-font);
     font-size: 22px;
     font-weight: 300;
     opacity: 0;

@@ -5,7 +5,28 @@
     max-width: 310px !important;
     flex: 1 1 !important;
 }
+.ui.card>.content>.header:not(.ui),
+.ui.card .meta{
+    /* font-family: var(--title-font); */
+}
 
+.ui.card .meta{
+    color: var(--font-color) !important;
+}
+
+.ui.card>.content>.description{
+    padding-top: 5px;
+    text-align: center;
+    /* font-family: var(--main-font); */
+    font-size: 17px;
+}
+
+.ui.card>.extra button:first-child{
+    background: var(--extra-color) !important;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+}
 
 @media (max-width: 1200px){
     .ui.card{
