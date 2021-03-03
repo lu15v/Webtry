@@ -5,6 +5,11 @@
     max-width: 310px !important;
     flex: 1 1 !important;
 }
+
+.ui.card:hover{
+    transform: scale(1.1);
+}
+
 .ui.card>.content>.header:not(.ui),
 .ui.card .meta{
     font-family: var(--main-font);

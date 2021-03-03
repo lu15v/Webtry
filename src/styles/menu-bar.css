@@ -12,6 +12,10 @@
     border-right: 1px solid #4E4E50 !important;
 }
 
+.ui.vertical.tabular.menu .item:hover {
+    background: #3C1C39 !important;
+}
+
 .ui.vertical.tabular.menu .active.item {
     background: var(--select-color) !important;
     border-color: transparent !important;
