@@ -5,6 +5,7 @@
 
 .ui.tabular.menu .item {
     color: #E3E2DF !important;
+    font-family: var(--main-font);
 }
 
 .ui.vertical.tabular.menu {
@@ -14,4 +15,5 @@
 .ui.vertical.tabular.menu .active.item {
     background: var(--select-color) !important;
     border-color: transparent !important;
+    border-right: 2px solid #C59D5F !important;
 }
