@@ -28,13 +28,8 @@
     font-size: 17px;
 }
 
-.ui.card>.extra button:first-child{
-    background: var(--extra-color) !important;
-    color: #fff;
-    display: block;
-    margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+.ui.card>.extra span{
+    color: var(--extra-color);
 }
 
 @media (max-width: 1200px){

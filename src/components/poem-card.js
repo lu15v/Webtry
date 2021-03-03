@@ -1,7 +1,7 @@
-import React from 'react'
-import { Card, Button } from 'semantic-ui-react'
+import React from "react";
+import { Card, Button } from "semantic-ui-react";
 
-import '../styles/poem-card.css';
+import "../styles/poem-card.css";
 
 const poemaDemo = `
 Deténte, sombra de mi bien esquivo,
@@ -20,22 +20,27 @@ que aunque dejas burlado el lazo estrecho
 
 que tu forma fantástica ceñía,
 poco importa burlar brazos y pecho
-si te labra prisión mi fantasía.`
+si te labra prisión mi fantasía.`;
 
 const PoemCard = () => (
-
   <Card>
     <Card.Content>
-        <Card.Header>Aveces te extrano</Card.Header>
-        <Card.Meta>Sor Juana Ines de la Cruz (1710)</Card.Meta>
-        <Card.Description>
-          {poemaDemo.substring(1, 100).concat('...')}
-        </Card.Description>
-      </Card.Content>
+      <Card.Header>Aveces te extrano</Card.Header>
+      <Card.Meta>Sor Juana Ines de la Cruz (1710)</Card.Meta>
+      <Card.Description>
+        {poemaDemo.substring(1, 100).concat("...")}
+      </Card.Description>
+    </Card.Content>
     <Card.Content extra>
-        <Button>Primary</Button>
+      <span>
+        <i className="eye icon"></i>4
+      </span>
+      <span className="right floated">
+        <i className="heart outline like icon"></i>
+        17 likes
+      </span>
     </Card.Content>
   </Card>
-)
+);
 
 export default PoemCard;
