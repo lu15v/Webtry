@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, Button } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
+import {Link} from "react-router-dom";
 
 import "../styles/poem-card.css";
 
@@ -23,7 +24,7 @@ poco importa burlar brazos y pecho
 si te labra prisión mi fantasía.`;
 
 const PoemCard = () => (
-  <Card>
+  <Card as={Link} to={`/poem/${1234212}`}>
     <Card.Content>
       <Card.Header>Aveces te extrano</Card.Header>
       <Card.Meta>Sor Juana Ines de la Cruz (1710)</Card.Meta>

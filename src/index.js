@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import PoemView from "./components/poem-view";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+    <Route exact path='/' component={App}/>
+    <Route exact path='/poem/:id' component={PoemView}/>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
