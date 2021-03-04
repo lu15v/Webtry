@@ -1,0 +1,15 @@
+
+.ui.grid{
+    width: 88%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.poem-view-container{
+    background: #F5F5F5;
+    padding: 1rem 0;
+    overflow-y: auto;
+    text-align: center;
+}

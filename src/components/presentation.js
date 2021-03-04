@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
@@ -7,7 +8,14 @@ import {
 
 import "../styles/presentation.css";
 
-const Presentation = ({ setShow }) => {
+const Presentation = () => {
+  let history = useHistory();
+
+  function getIn(){
+    localStorage.setItem("presentationShowed", true)
+    history.push("/");
+  }
+
   return (
     <div className="hero hero-picture">
       <div className="hero-text">
@@ -21,7 +29,7 @@ const Presentation = ({ setShow }) => {
         </h1>
         <p className="slogan">Donde las palabras tocan el alma</p>
 
-        <div className="enter-site-container" onClick={() => setShow()}>
+        <div className="enter-site-container" onClick={() => getIn()}>
           <FontAwesomeIcon className="arrow-left" icon={faChevronRight} />
           <p>Enter to the site</p>
           <FontAwesomeIcon className="arrow-right" icon={faChevronLeft} />

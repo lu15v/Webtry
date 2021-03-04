@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Menu } from "semantic-ui-react";
 
-import MainContent from "./main-content";
-
 import "../styles/menu-bar.css";
 
 const MenuBar = () => {
@@ -11,7 +9,6 @@ const MenuBar = () => {
   const handleItemClick = (e, { name }) => setActiveItem(name);
 
   return (
-    <div className="container">
       <Menu fluid vertical tabular className="menu-container">
         <Menu.Item
           name="bio"
@@ -34,9 +31,6 @@ const MenuBar = () => {
           onClick={handleItemClick}
         />
       </Menu>
-
-      <MainContent />
-    </div>
   );
 };
 

@@ -7,7 +7,7 @@
 }
 
 .ui.card:hover{
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
 }
 
 .ui.card>.content>.header:not(.ui),

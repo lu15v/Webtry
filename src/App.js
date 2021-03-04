@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Presentation from "./components/presentation";
-import MenuBar from "./components/menu-bar";
+import MainContent from "./components/main-content";
+import PoemList from "./components/poem-list";
 
-import 'semantic-ui-css/semantic.min.css'
+import "semantic-ui-css/semantic.min.css";
 
 function App() {
-  const [showPresentation, setShowPresentation] = useState(true);
-
-  return (
-    showPresentation ? (
-        <Presentation setShow={setShowPresentation} />
-      ) : (
-        <MenuBar />
-    )
+  return localStorage.getItem("presentationShowed") ? (
+    <MainContent>
+      <PoemList />
+    </MainContent>
+  ) : (
+    <Presentation />
   );
 }
 

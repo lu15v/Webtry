@@ -1,19 +1,16 @@
 import React from "react";
-import PoemCard from "./poem-card";
 
-import "../styles/main-content.css";
+import MenuBar from "./menu-bar";
 
-const MainContent = () => {
-  return (
-    <div className="main-content-container">
-      <PoemCard />
-      <PoemCard />
-      <PoemCard />
-      <PoemCard />
-      <PoemCard />
-      <PoemCard />
-    </div>
-  );
-};
+class MainContent extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <MenuBar />
+        {this.props.children}
+      </div>
+    );
+  }
+}
 
 export default MainContent;
