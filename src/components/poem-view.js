@@ -17,11 +17,22 @@ const PoemView = () => {
           </div>
         </div>
       </div>
-      <div className="panel-left"></div>
-      <div className="poem-body-container">
-        <div className="poem-body">
-          <p>
-          {`Te dejo en libertad, no porque yo quiera hacerlo, sino porque tú así lo has decidido.
+      <div className="panel-left">
+        <div className="profile-container">
+          <div className="photo-picture"></div>
+          <div className="author-name"></div>
+        </div>
+      </div>
+      <div className="main-container">
+        <div className="poem-container">
+          <div className="poem-desc">
+            <p>
+              Published in <strong>poem section here</strong> · 12/12/2020
+            </p>
+          </div>
+          <div className="poem-body">
+            <p>
+              {`Te dejo en libertad, no porque yo quiera hacerlo, sino porque tú así lo has decidido.
 
 Te dejo en libertad, porque tu me has dejado a la deriva, en el barco que en el que solíamos viajar juntos.
 
@@ -38,8 +49,8 @@ Te dejo en libertad, porque estoy profundamente cansado y triste.
 Te dejo con todo el dolor de mi corazón en libertad, porque la niña que solía reír conmigo, ha muerto y aún no termino de llorar por mi pérdida.
 
 Te dejo con todo el dolor de mi ser, en libertad, porque la persona que me amaba, que me quería a su lado. Ya no existe más y no pude revivirla.`}
-
-          </p>
+            </p>
+          </div>
         </div>
       </div>
     </div>

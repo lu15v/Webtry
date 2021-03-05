@@ -79,7 +79,7 @@
     top: 0;
 }
 
-.poem-body-container{
+.main-container{
     border: 1px solid yellow;
     display: flex;
     flex: 4 0;
@@ -88,12 +88,21 @@
     font-family: var(--poem-font);
 }
 
-.poem-body{
-    text-align: center;
-    white-space: pre-line;
+.poem-container{
     width: 50%;
     position: relative;
     left: 14%;
+    display: flex;
+    flex-direction: column;
+}
+
+.poem-desc{
+    padding: 2rem 0;
+}
+
+.poem-body{
+    text-align: center;
+    white-space: pre-line;
 }
 
 .poem-body p{
