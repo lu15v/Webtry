@@ -14,97 +14,146 @@
     text-align: center;
 } */
 
-.poem-view-container{
-    display: flex;
-    flex-wrap: wrap;
-    align-content:flex-start ;
-    overflow-y: auto;
-    width: 100%;
+.poem-view-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow-y: auto;
+  width: 100%;
 }
 
-.poem-header{
-    border: 1px solid #fff;
-    width: 100%;
-    height: 26%;
-    background-image: linear-gradient(to bottom, #0f100f82, #0f100f82), url("https://i.stack.imgur.com/Bj4ge.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
+.poem-header {
+  border: 1px solid #fff;
+  width: 100%;
+  height: 26%;
+  background-image: linear-gradient(to bottom, #0f100f82, #0f100f82),
+    url("https://i.stack.imgur.com/Bj4ge.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .webtry-title-container,
-.poem-title-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.poem-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.webtry-title-container{
-    border: 1px solid yellow;
-    flex: 2 0;
+.webtry-title-container {
+  border: 1px solid yellow;
+  flex: 2 0;
 }
 
-.poem-title-container{
-    border: 1px solid red;
-    flex: 4 0;
+.poem-title-container {
+  border: 1px solid red;
+  flex: 4 0;
 }
 
 .poem-title,
-.webtry-title{
-    position: relative;
-    width: 50%;
-    text-align: center;
+.webtry-title {
+  position: relative;
+  width: 50%;
+  text-align: center;
 }
 
-.webtry-title h1{
-    font-family: var(--main-title-font);
-    font-weight: 500;
-    display: inline;
-    font-size: 4rem;
-    color:var(--font-color);
+.webtry-title h1 {
+  font-family: var(--main-title-font);
+  font-weight: 500;
+  display: inline;
+  font-size: 4rem;
+  color: var(--font-color);
 }
 
-.poem-title h1{
-    color: #fff;
-    font-family: var(--main-font);
+.poem-title h1 {
+  color: #fff;
+  font-family: var(--main-font);
 }
 
-.panel-left{
-    border: 1px solid red;
-    flex: 1 1;
-    min-height: 74%;
-    position: sticky;
-    top: 0;
+.panel-left {
+  border: 1px solid red;
+  flex: 1 1;
+  min-height: 74%;
+  position: sticky;
+  top: 0;
 }
 
-.main-container{
-    border: 1px solid yellow;
-    display: flex;
-    flex: 4 0;
-    height: auto;
-    color: #fff;
-    font-family: var(--poem-font);
+.main-container {
+  border: 1px solid yellow;
+  display: flex;
+  flex: 4 0;
+  height: auto;
+  color: #fff;
+  font-family: var(--poem-font);
 }
 
-.poem-container{
-    width: 50%;
-    position: relative;
-    left: 14%;
-    display: flex;
-    flex-direction: column;
+.poem-container {
+  width: 50%;
+  position: relative;
+  left: 14%;
+  display: flex;
+  flex-direction: column;
 }
 
-.poem-desc{
-    padding: 2rem 0;
+.poem-desc {
+  padding: 2rem 0;
 }
 
-.poem-body{
-    text-align: center;
-    white-space: pre-line;
+.poem-body {
+  text-align: center;
+  white-space: pre-line;
 }
 
-.poem-body p{
-    font-size: 21px;
+.poem-body p {
+  font-size: 21px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .panel-left {
+    display: none;
+  }
+  .main-container {
+    justify-content: center;
+  }
+
+  .poem-container {
+    width: 40%;
+    left: 0%;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .poem-header {
+    height: 20%;
+  }
+  .webtry-title h1 {
+      font-size: 40px;
+  }
+
+  .poem-title h1 {
+    font-size: 20px;
+  }
+
+  .panel-left {
+    display: none;
+  }
+  .main-container {
+    min-height: 80%;
+    justify-content: center;
+  }
+
+  .poem-container {
+    width: 45%;
+    left: 0%;
+  }
+
+  .poem-desc p{
+      font-size: 14px;
+  }
+
+  .poem-body p{
+      font-size: 18px;
+  }
 }
