@@ -1,0 +1,12 @@
+.collapse-button {
+  border-bottom: 1px solid #4e4e50 !important;
+  border-top: 1px solid #4e4e50 !important;
+  border-right: 1px solid #4e4e50 !important;
+  margin-top: 2.5rem;
+  height: 60px;
+}
+
+.collapse-button i.big.icon {
+  color: #fff;
+  padding: 15px 0;
+}
