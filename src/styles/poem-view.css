@@ -76,8 +76,17 @@
   border: 1px solid red;
   flex: 1 1;
   min-height: 74%;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-container {
+  width: 150px;
+  height: 250px;
+  border: 1px solid red;
+  margin-top: 4rem;
   position: sticky;
-  top: 0;
+  top: 3rem;
 }
 
 .main-container {
@@ -129,7 +138,7 @@
     height: 20%;
   }
   .webtry-title h1 {
-      font-size: 40px;
+    font-size: 40px;
   }
 
   .poem-title h1 {
@@ -139,6 +148,7 @@
   .panel-left {
     display: none;
   }
+
   .main-container {
     min-height: 80%;
     justify-content: center;
@@ -149,11 +159,11 @@
     left: 0%;
   }
 
-  .poem-desc p{
-      font-size: 14px;
+  .poem-desc p {
+    font-size: 14px;
   }
 
-  .poem-body p{
-      font-size: 18px;
+  .poem-body p {
+    font-size: 18px;
   }
 }
