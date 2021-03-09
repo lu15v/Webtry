@@ -59,12 +59,12 @@
   text-align: center;
 }
 
-.webtry-title h1 {
-  font-family: var(--main-title-font);
-  font-weight: 500;
-  display: inline;
-  font-size: 4rem;
-  color: var(--font-color);
+.webtry-title a {
+  font-family: var(--main-title-font) !important;
+  font-weight: 500 !important;
+  display: inline !important;
+  font-size: 4rem !important;
+  color: var(--font-color) !important;
 }
 
 .poem-title h1 {
@@ -161,8 +161,8 @@
   .poem-header {
     height: 20%;
   }
-  .webtry-title h1 {
-    font-size: 40px;
+  .webtry-title a {
+    font-size: 40px !important;
   }
 
   .poem-title h1 {

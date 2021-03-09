@@ -1,5 +1,6 @@
 import React from "react";
-import { Image } from "semantic-ui-react";
+import { Image, Header } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import "../styles/poem-view.css";
 
 const PoemView = () => {
@@ -8,7 +9,9 @@ const PoemView = () => {
       <div className="poem-header">
         <div className="webtry-title-container">
           <div className="webtry-title">
-            <h1>Webtry.</h1>
+            <Header as={Link} to="/">
+              Webtry.
+            </Header>
           </div>
         </div>
         <div className="poem-title-container">
