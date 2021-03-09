@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Image } from "semantic-ui-react";
 import "../styles/poem-view.css";
 
 const PoemView = () => {
@@ -19,8 +19,15 @@ const PoemView = () => {
       </div>
       <div className="panel-left">
         <div className="profile-container">
-          <div className="photo-picture"></div>
-          <div className="author-name"></div>
+          <div className="photo-picture">
+            <Image
+              src="https://miro.medium.com/fit/c/262/262/1*-AnRurxYM1u0PRMIR60Oyg.jpeg"
+              size="small"
+            />
+          </div>
+          <div className="author-name">
+            <span>Luis Ballinas</span>
+          </div>
         </div>
       </div>
       <div className="main-container">
