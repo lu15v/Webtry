@@ -4,6 +4,7 @@
   border-right: 1px solid #4e4e50 !important;
   margin-top: 2.5rem;
   height: 60px;
+  cursor: pointer;
 }
 
 .collapse-button i.big.icon {
