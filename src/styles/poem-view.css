@@ -1,19 +1,3 @@
-/* 
-.ui.grid{
-    width: 88%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-}
-
-.poem-view-container{
-    background: #F5F5F5;
-    padding: 1rem 0;
-    overflow-y: auto;
-    text-align: center;
-} */
-
 .poem-view-container {
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +7,6 @@
 }
 
 .poem-header {
-  border: 1px solid #fff;
   width: 100%;
   height: 26%;
   background-image: linear-gradient(to bottom, #0f100f82, #0f100f82),
@@ -43,12 +26,10 @@
 }
 
 .webtry-title-container {
-  border: 1px solid yellow;
   flex: 2 0;
 }
 
 .poem-title-container {
-  border: 1px solid red;
   flex: 4 0;
 }
 
@@ -73,9 +54,8 @@
 }
 
 .panel-left {
-  border: 1px solid red;
   flex: 1 1;
-  min-height: 74%;
+  height: auto;
   display: flex;
   justify-content: center;
 }
@@ -83,7 +63,6 @@
 .profile-container {
   width: 100%;
   height: 350px;
-  border: 1px solid red;
   margin-top: 4rem;
   position: sticky;
   top: 3rem;
@@ -97,14 +76,12 @@
   margin: 1rem;
   width: 150px;
   height: 150px;
-  border: 1px solid blue;
 }
 
 .author-name {
   margin-top: 1rem;
   height: 40px;
   width: auto;
-  border: 1px solid yellow;
 }
 
 .author-name span {
@@ -114,12 +91,12 @@
 }
 
 .main-container {
-  border: 1px solid yellow;
   display: flex;
   flex: 4 0;
   height: auto;
   color: #fff;
   font-family: var(--poem-font);
+  padding-bottom: 2rem;
 }
 
 .poem-container {

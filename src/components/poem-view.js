@@ -1,6 +1,8 @@
 import React from "react";
 import { Image, Header } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+
+import Footer from "./footer";
 import "../styles/poem-view.css";
 
 const PoemView = () => {
@@ -63,6 +65,7 @@ Te dejo con todo el dolor de mi ser, en libertad, porque la persona que me amaba
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

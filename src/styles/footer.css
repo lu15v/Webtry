@@ -1,0 +1,38 @@
+.footer-container {
+  background: #000;
+  width: 100%;
+  min-height: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo-container {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.description-container p {
+  color: #fff;
+  text-align: center;
+  font-family: var(--main-font);
+  font-weight: 700;
+  padding: 1rem 0;
+}
+
+.logo-container a {
+  font-family: var(--main-title-font) !important;
+  font-weight: 500 !important;
+  display: inline !important;
+  font-size: 4rem !important;
+  color: var(--font-color) !important;
+}
