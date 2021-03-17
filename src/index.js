@@ -6,14 +6,26 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import PoemView from "./components/poem-view";
 
+import { ApolloClient, InMemoryCache, createHttpLink, ApolloProvider} from '@apollo/client';
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:5000'
+});
+
+const apolloClient = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache()
+});
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-    <Route exact path='/' component={App}/>
-    <Route exact path='/poem/:id' component={PoemView}/>
-    </Router>
-  </React.StrictMode>,
+  <ApolloProvider client={apolloClient}>
+    <React.StrictMode>
+      <Router>
+      <Route exact path='/' component={App}/>
+      <Route exact path='/poem/:id' component={PoemView}/>
+      </Router>
+    </React.StrictMode>
+  </ApolloProvider>,
   document.getElementById('root')
 );
 
