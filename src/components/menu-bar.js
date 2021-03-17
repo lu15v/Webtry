@@ -1,31 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Menu, Transition } from "semantic-ui-react";
+import {Context} from '../context/context';
 
 import "../styles/menu-bar.css";
 
 const MenuBar = ({show, duration}) => {
-  const [activeItem, setActiveItem] = useState("");
-  const [width, setWidth] = useState(window.innerWidth);
-  // const [active, setActive] = useState(true);
+  const [activeItem, setActiveItem] = useState("Default");
+  const {switchCompilation} = useContext(Context);
 
-  useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleWindowResize);
+  useEffect(() =>{
+    switchCompilation(activeItem);
+  }, [activeItem]);
 
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
+  const handleItemClick = (e, { name }) => {
+    setActiveItem(name);
+  }
 
-  console.log(width);
-  const handleItemClick = (e, { name }) => setActiveItem(name);
-
-  console.log(window.innerWidth);
   return (
       <Transition.Group animation={"fade right"} duration={duration}>
         {show && (
           <Menu fluid vertical tabular className="menu-container">
             <Menu.Item
-              name="bio"
-              active={activeItem === "bio"}
+              name="Default"
+              active={activeItem === "Default"}
               onClick={handleItemClick}
             />
             <Menu.Item
@@ -45,7 +42,6 @@ const MenuBar = ({show, duration}) => {
             />
           </Menu>
         )}
-      {/* <Button onClick={() => setActive(!active)}>trigger</Button> */}
       </Transition.Group>
   );
 };
