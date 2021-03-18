@@ -4,6 +4,7 @@ import { FETCH_WRITINGS_BY_COMPILATION } from "../graphql/queries";
 import { useQuery} from "@apollo/client";
 import { Context } from "../context/context";
 import { nanoid } from 'nanoid';
+import Spinner from './spinner';
 
 import "../styles/poem-list.css";
 
@@ -19,22 +20,16 @@ const PoemList = () => {
     },
   });
 
-  if (loading) {
-    console.log("loading////");
-  }
-
-  if (data && data.getWritingsByCompilation) {
-    console.log(data.getWritingsByCompilation);
-  }
-
   return (
-    <div className="poem-list-container">
-      {data && data.getWritingsByCompilation &&
-        data.getWritingsByCompilation.map(writing =>{
-          return <PoemCard key={nanoid()}writingInfo={writing} />
-        })
-      }
-    </div>
+      loading ?  <Spinner/> : (
+        <div className="poem-list-container">
+          {data && data.getWritingsByCompilation &&
+            data.getWritingsByCompilation.map(writing =>{
+              return <PoemCard key={nanoid()}writingInfo={writing} />
+            })
+          }
+        </div>
+      )
   );
 };
 
