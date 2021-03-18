@@ -1,35 +1,30 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
 import {Link} from "react-router-dom";
-
+import moment from "moment";
+import {FETCH_AUTHOR_BY_ID } from '../graphql/queries';
 import "../styles/poem-card.css";
+import { useQuery } from "@apollo/client";
 
-const poemaDemo = `
-Deténte, sombra de mi bien esquivo,
-imagen del hechizo que más quiero,
-bella ilusión por quien alegre muero,
-dulce ficción por quien penosa vivo.
 
-Si al imán de tus gracias atractivo
-sirve mi pecho de obediente acero,
-¿para qué me enamoras lisonjero,
-si has de burlarme luego fugitivo?
+const PoemCard = ({writingInfo: {title, author, body, createdAt, id}}) => {
+  const {data} = useQuery(FETCH_AUTHOR_BY_ID, {
+    variables: {
+       authorId: author
+    },
+    onError(error) {
+      console.log(error);
+    }
+  })
 
-Mas blasonar no puedes satisfecho
-de que triunfa de mí tu tiranía;
-que aunque dejas burlado el lazo estrecho
+  const username = data && data.getAuthorById && data.getAuthorById.username;
 
-que tu forma fantástica ceñía,
-poco importa burlar brazos y pecho
-si te labra prisión mi fantasía.`;
-
-const PoemCard = () => (
-  <Card as={Link} to={`/poem/${1234212}`}>
+  return (<Card as={Link} to={`/poem/${id}`}>
     <Card.Content>
-      <Card.Header>Aveces te extrano</Card.Header>
-      <Card.Meta>Sor Juana Ines de la Cruz (1710)</Card.Meta>
+      <Card.Header>{title}</Card.Header>
+      <Card.Meta>{`${username} - ${moment(new Date(parseInt(createdAt))).format("MMM Do YY")}`}</Card.Meta>
       <Card.Description>
-        {poemaDemo.substring(1, 100).concat("...")}
+        {body.substring(1, 100).concat("...")}
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
@@ -41,7 +36,7 @@ const PoemCard = () => (
         17 likes
       </span>
     </Card.Content>
-  </Card>
-);
+  </Card>)
+};
 
 export default PoemCard;

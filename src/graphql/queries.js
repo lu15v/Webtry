@@ -15,3 +15,15 @@ export const FETCH_WRITINGS_BY_COMPILATION = gql`
         }
     }
 `;
+
+export const FETCH_AUTHOR_BY_ID = gql`
+    query($authorId: ID!){
+        getAuthorById(authorId: $authorId){
+            id
+            username
+            firstName
+            surname
+            createdAt
+        }
+    }
+`;
