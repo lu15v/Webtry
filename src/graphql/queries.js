@@ -27,3 +27,14 @@ export const FETCH_AUTHOR_BY_ID = gql`
         }
     }
 `;
+
+export const FETCH_WRITING_BY_ID = gql`
+    query($writingId: ID!){
+        getWritingById(writingId: $writingId){
+            title
+            body
+            compilation
+            createdAt
+        }
+    }
+`;
