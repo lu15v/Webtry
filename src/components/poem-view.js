@@ -26,7 +26,7 @@ const PoemView = () => {
     component = <Spinner />;
   } else {
     console.log(data)
-    const { title, body, compilation, createdAt } = data.getWritingById;
+    const { title, body, compilation, createdAt, author } = data.getWritingById;
 
     component = (
       <div className="container poem-view-container">
@@ -53,7 +53,7 @@ const PoemView = () => {
               />
             </div>
             <div className="author-name">
-              <span>Luis Ballinas</span>
+              <span>{author.username}</span>
             </div>
           </div>
         </div>

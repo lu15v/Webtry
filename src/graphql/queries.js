@@ -9,9 +9,11 @@ export const FETCH_WRITINGS_BY_COMPILATION = gql`
             body
             compilation
             type
-            author
             views
             createdAt
+            author{
+                id
+            }
         }
     }
 `;
@@ -35,6 +37,9 @@ export const FETCH_WRITING_BY_ID = gql`
             body
             compilation
             createdAt
+            author{
+                username
+            }
         }
     }
 `;
