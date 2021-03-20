@@ -8,6 +8,7 @@ import Spinner from "./spinner";
 import moment from "moment";
 
 import "../styles/poem-view.css";
+import { nanoid } from "nanoid";
 
 const PoemView = () => {
   const { id } = useParams();
@@ -25,7 +26,6 @@ const PoemView = () => {
   if (loading) {
     component = <Spinner />;
   } else {
-    console.log(data)
     const { title, body, compilation, createdAt, author } = data.getWritingById;
 
     component = (
@@ -61,13 +61,14 @@ const PoemView = () => {
           <div className="poem-container">
             <div className="poem-desc">
               <p>
-                Published in <strong>{compilation}</strong> · {moment(new Date(parseInt(createdAt))).format("MMM Do YY")}
+                Published in <strong>{compilation}</strong> ·{" "}
+                {moment(new Date(parseInt(createdAt))).format("MMM Do YY")}
               </p>
             </div>
             <div className="poem-body">
-              <p>
-                {body}
-              </p>
+            {body.replace(/\\n/g, '\n').split('\n').map(paragraph => (
+              <p key={nanoid()}>{paragraph}</p>
+            ))}
             </div>
           </div>
         </div>
