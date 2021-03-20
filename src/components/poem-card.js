@@ -6,7 +6,7 @@ import { FETCH_AUTHOR_BY_ID } from "../graphql/queries";
 import "../styles/poem-card.css";
 import { useQuery } from "@apollo/client";
 
-const PoemCard = ({ writingInfo: { title, author, body, createdAt, id } }) => {
+const PoemCard = ({ writingInfo: { title, author, body, createdAt, id, views } }) => {
   const { data } = useQuery(FETCH_AUTHOR_BY_ID, {
     variables: {
       authorId: author.id,
@@ -31,7 +31,7 @@ const PoemCard = ({ writingInfo: { title, author, body, createdAt, id } }) => {
       </Card.Content>
       <Card.Content extra>
         <span>
-          <i className="eye icon"></i>4
+          <i className="eye icon"></i>{views}
         </span>
         <span className="right floated">
           <i className="heart outline like icon"></i>

@@ -37,6 +37,7 @@ export const FETCH_WRITING_BY_ID = gql`
             body
             compilation
             createdAt
+            views
             author{
                 username
             }

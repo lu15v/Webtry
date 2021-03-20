@@ -1,8 +1,9 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Image, Header } from "semantic-ui-react";
 import { Link, useParams } from "react-router-dom";
 import { FETCH_WRITING_BY_ID } from "../graphql/queries";
-import { useQuery } from "@apollo/client";
+import {UPDATE_VIEWS} from "../graphql/mutations";
+import { useQuery, useMutation } from "@apollo/client";
 import Footer from "./footer";
 import Spinner from "./spinner";
 import moment from "moment";
@@ -12,14 +13,23 @@ import { nanoid } from "nanoid";
 
 const PoemView = () => {
   const { id } = useParams();
+  const [updateViews] = useMutation(UPDATE_VIEWS,{
+    variables:{
+      writingId: id
+    }
+  });
+
   const { loading, data } = useQuery(FETCH_WRITING_BY_ID, {
     variables: {
       writingId: id,
     },
-    onError(error) {
+    onCompleted: () => updateViews(id)
+    ,onError(error) {
       console.log(error);
     },
   });
+
+  
 
   let component;
 
