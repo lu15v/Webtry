@@ -5,6 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import PoemView from "./components/poem-view";
+import Login from "./components/login";
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -27,6 +29,7 @@ ReactDOM.render(
       <Router>
         <Route exact path="/" component={App} />
         <Route exact path="/poem/:id" component={PoemView} />
+        <Route exact path="/login" component={Login} />
       </Router>
     </React.StrictMode>
   </ApolloProvider>,

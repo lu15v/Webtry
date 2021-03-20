@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Menu, Transition } from "semantic-ui-react";
 import {Context} from '../context/context';
+import {Link} from 'react-router-dom';
 
 import "../styles/menu-bar.css";
 
@@ -38,6 +39,13 @@ const MenuBar = ({show, duration}) => {
             <Menu.Item
               name="links"
               active={activeItem === "links"}
+              onClick={handleItemClick}
+            />
+            <Menu.Item
+              name="login"
+              active={activeItem === "login"}
+              as={Link}
+              to="login"
               onClick={handleItemClick}
             />
           </Menu>
