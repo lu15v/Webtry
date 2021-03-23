@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import PoemView from "./components/poem-view";
 import Login from "./components/login";
+import { Provider } from "./context/context";
 
 import {
   ApolloClient,
@@ -26,11 +27,13 @@ const apolloClient = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={apolloClient}>
     <React.StrictMode>
-      <Router>
-        <Route exact path="/" component={App} />
-        <Route exact path="/poem/:id" component={PoemView} />
-        <Route exact path="/login" component={Login} />
-      </Router>
+      <Provider>
+        <Router>
+          <Route exact path="/" component={App} />
+          <Route exact path="/poem/:id" component={PoemView} />
+          <Route exact path="/login" component={Login} />
+        </Router>
+      </Provider>
     </React.StrictMode>
   </ApolloProvider>,
   document.getElementById("root")

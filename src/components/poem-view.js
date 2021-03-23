@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React from "react";
 import { Image, Header } from "semantic-ui-react";
 import { Link, useParams } from "react-router-dom";
 import { FETCH_WRITING_BY_ID } from "../graphql/queries";
