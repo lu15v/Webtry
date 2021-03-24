@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import PoemView from "./components/poem-view";
 import Login from "./components/login";
 import { Provider } from "./context/context";
+import AuthRoute from "./components/auth-roote";
+import NewWriting from "./components/new-writing";
 
 import {
   ApolloClient,
@@ -32,6 +34,7 @@ ReactDOM.render(
           <Route exact path="/" component={App} />
           <Route exact path="/poem/:id" component={PoemView} />
           <Route exact path="/login" component={Login} />
+          <AuthRoute exact path="/new-writing" component={NewWriting}/>
         </Router>
       </Provider>
     </React.StrictMode>
