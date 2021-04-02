@@ -4,6 +4,7 @@ import { useForm } from "../util/hooks";
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../graphql/mutations";
 import {Context} from "../context/context";
+import {nanoid} from 'nanoid';
 
 import "../styles/login.css";
 
@@ -67,7 +68,7 @@ const Login = (props) => {
           <div className="ui error message">
             <ul className="list">
               {Object.values(errors).map((error) => (
-                <li key={error}>{error}</li>
+                <li key={nanoid()}>{error}</li>
               ))}
             </ul>
           </div>

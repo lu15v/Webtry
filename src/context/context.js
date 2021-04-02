@@ -11,8 +11,6 @@ const initialState ={
 
 if(localStorage.getItem('token')){
     const decodedToken = jwtDecode(localStorage.getItem('token'));
-    console.log("token, ", decodedToken.exp * 1000)
-    console.log("datenow", Date.now())
     if(decodedToken.exp * 1000 < Date.now()){
         localStorage.removeItem('token');
     }else{

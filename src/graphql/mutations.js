@@ -15,3 +15,30 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const CREATE_WRITING = gql`
+  mutation createWriting(
+    $title: String!
+    $body: String!
+    $compilation: String
+    $type: String
+    $username: String
+  ) {
+    createWriting(
+      writingInput: {
+        title: $title
+        body: $body
+        compilation: $compilation
+        type: $type
+        username: $username
+      }
+    ) {
+      id
+      title
+      body
+      compilation
+      type
+      createdAt
+    }
+  }
+`;
