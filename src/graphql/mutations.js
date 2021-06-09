@@ -23,6 +23,7 @@ export const CREATE_WRITING = gql`
     $compilation: String
     $type: String
     $username: String
+    $createdAt: String
   ) {
     createWriting(
       writingInput: {
@@ -31,6 +32,7 @@ export const CREATE_WRITING = gql`
         compilation: $compilation
         type: $type
         username: $username
+        createdAt: $createdAt
       }
     ) {
       id

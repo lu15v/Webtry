@@ -5,11 +5,11 @@ import { CREATE_WRITING } from "../graphql/mutations";
 import { useForm } from "../util/hooks";
 import { Context } from "../context/context";
 import { Link } from "react-router-dom";
-import { nanoid } from "nanoid";
 
 import "../styles/new-writing.css";
 
-const compilation = [{ key: "default", text: "Default", value: "default" }];
+const compilation = [{ key: "default", text: "Default", value: "default" },
+                     { key: "Sobre el amor", text: "Sobre el amor", value: "Sobre el amor" }];
 
 const typeOfWriting = [
   { key: "poem", text: "Poema", value: "poem" },
@@ -29,6 +29,7 @@ const NewWriting = () => {
     compilation: "",
     type: "",
     username: username,
+    createdAt: ""
   });
 
   const [createWriting, { loading }] = useMutation(CREATE_WRITING, {
@@ -43,6 +44,7 @@ const NewWriting = () => {
   });
 
   function submitWriting() {
+    console.log(values)
     createWriting();
   }
 
@@ -80,6 +82,15 @@ const NewWriting = () => {
             name="type"
             options={typeOfWriting}
             value={values.type}
+            onChange={onChange}
+          />
+          <Form.Input
+            label="Fecha"
+            placeholder="Fecha.."
+            name="createdAt"
+            type="text"
+            value={values.createdAt}
+            error={errors.createdAt}
             onChange={onChange}
           />
           <TextArea
