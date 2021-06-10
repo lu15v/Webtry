@@ -46,6 +46,11 @@ const MenuBar = ({ show, duration }) => {
             active={activeItem === "Vol 2"}
             onClick={handleItemClick}
           />
+          <Menu.Item
+            name="Vol 3"
+            active={activeItem === "Vol 3"}
+            onClick={handleItemClick}
+          />
           {!user && (
             <Menu.Item
               name="login"

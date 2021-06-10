@@ -14,7 +14,8 @@ const compilation = [{ key: "Default", text: "Default", value: "default" },
                      { key: "Sobre el amor", text: "Sobre el amor", value: "Sobre el amor" },
                      { key: "Para un corazón roto", text: "Para un corazón roto", value: "Para un corazón roto" },
                      { key: "Vol 1", text: "Vol 1", value: "Vol 1" },
-                     { key: "Vol 2", text: "Vol 2", value: "Vol 2" }];
+                     { key: "Vol 2", text: "Vol 2", value: "Vol 2" },
+                     { key: "Vol 3", text: "Vol 3", value: "Vol 3" }];
 
 const typeOfWriting = [
   { key: "poem", text: "Poema", value: "poem" },
