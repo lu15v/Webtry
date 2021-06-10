@@ -9,12 +9,17 @@ import Modal from './modal';
 
 import "../styles/new-writing.css";
 
-const compilation = [{ key: "default", text: "Default", value: "default" },
-                     { key: "Sobre el amor", text: "Sobre el amor", value: "Sobre el amor" }];
+const compilation = [{ key: "Default", text: "Default", value: "default" },
+                     { key: "Esto soy", text: "Esto soy", value: "Esto soy" },
+                     { key: "Sobre el amor", text: "Sobre el amor", value: "Sobre el amor" },
+                     { key: "Para un corazón roto", text: "Para un corazón roto", value: "Para un corazón roto" },
+                     { key: "Vol 1", text: "Vol 1", value: "Vol 1" },
+                     { key: "Vol 2", text: "Vol 2", value: "Vol 2" }];
 
 const typeOfWriting = [
   { key: "poem", text: "Poema", value: "poem" },
   { key: "writing", text: "Escrito", value: "writing" },
+  { key: "song", text: "Canción", value: "song" },
 ];
 
 const NewWriting = () => {

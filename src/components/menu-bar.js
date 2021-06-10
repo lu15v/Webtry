@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "../styles/menu-bar.css";
 
 const MenuBar = ({ show, duration }) => {
-  const [activeItem, setActiveItem] = useState("Default");
+  const [activeItem, setActiveItem] = useState("Esto soy");
   const { switchCompilation, user, logout } = useContext(Context);
 
   useEffect(() => {
@@ -22,23 +22,28 @@ const MenuBar = ({ show, duration }) => {
       {show && (
         <Menu fluid vertical tabular className="menu-container">
           <Menu.Item
-            name="Default"
-            active={activeItem === "Default"}
+            name="Esto soy"
+            active={activeItem === "Esto soy"}
             onClick={handleItemClick}
           />
           <Menu.Item
-            name="pics"
-            active={activeItem === "pics"}
+            name="Sobre el amor"
+            active={activeItem === "Sobre el amor"}
             onClick={handleItemClick}
           />
           <Menu.Item
-            name="companies"
-            active={activeItem === "companies"}
+            name="Para un corazón roto"
+            active={activeItem === "Para un corazón roto"}
             onClick={handleItemClick}
           />
           <Menu.Item
-            name="links"
-            active={activeItem === "links"}
+            name="Vol 1"
+            active={activeItem === "Vol 1"}
+            onClick={handleItemClick}
+          />
+          <Menu.Item
+            name="Vol 2"
+            active={activeItem === "Vol 2"}
             onClick={handleItemClick}
           />
           {!user && (
