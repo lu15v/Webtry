@@ -10,12 +10,13 @@ const  modal = (props) =>{
     <Modal
       centered={false}
       open={open}
-      trigger={<Button>Show Modal</Button>}
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
     >
-      <Modal.Header>Thank you!</Modal.Header>
+      <Modal.Header>Publicación guardada</Modal.Header>
       <Modal.Content>
         <Modal.Description>
-          Your subscription has been confirmed
+            Publicación creada exitosamente
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
