@@ -5,6 +5,7 @@ import { CREATE_WRITING } from "../graphql/mutations";
 import { useForm } from "../util/hooks";
 import { Context } from "../context/context";
 import { Link } from "react-router-dom";
+import Modal from './modal';
 
 import "../styles/new-writing.css";
 
@@ -22,6 +23,8 @@ const NewWriting = () => {
   } = useContext(Context);
 
   const [errors, setErrors] = useState({});
+  const [saved, setSaved] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const { onChange, onSubmit, values } = useForm(() => submitWriting(), {
     title: "",
@@ -35,6 +38,7 @@ const NewWriting = () => {
   const [createWriting, { loading }] = useMutation(CREATE_WRITING, {
     update(_, { data }) {
       console.log(data);
+      setSaved(true);
     },
     onError(err) {
     //   console.log(JSON.stringify(err, null, 2));
@@ -51,6 +55,7 @@ const NewWriting = () => {
   return (
     <div className="writing-container">
       <div className="corral-writing">
+        {saved && <Modal open={open} setOpen={setOpen}/>}
         <h1>Las grandes ideas, comienzan siendo escritas</h1>
         <Form
           onSubmit={onSubmit}
