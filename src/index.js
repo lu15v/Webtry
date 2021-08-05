@@ -18,7 +18,7 @@ import {
 } from "@apollo/client";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:5000",
+  uri: "https://webtry-back-end.herokuapp.com/",
 });
 
 const apolloClient = new ApolloClient({
