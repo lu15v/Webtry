@@ -1,0 +1,18 @@
+.writing-container{
+    height: 100%;
+    background: #f0f0f0;
+    flex: 1;
+    padding: 30px
+}
+
+.corral-writing{
+    
+}
+
+.corral-writing h1{
+    margin: 1rem 0 1.5rem 0;
+}
+
+.corral-writing button[type=submit]{
+    margin-top: 1rem;
+}
