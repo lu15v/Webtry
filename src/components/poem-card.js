@@ -26,7 +26,7 @@ const PoemCard = ({ writingInfo: { title, author, body, createdAt, id, views } }
           new Date(parseInt(createdAt))
         ).format("MMM Do YY")}`}</Card.Meta>
         <Card.Description>
-          {body.substring(1, 100).concat("...")}
+          {body.substring(0, 100).concat("...")}
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
