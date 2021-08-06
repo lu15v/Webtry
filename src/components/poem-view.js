@@ -29,9 +29,7 @@ const PoemView = () => {
       console.log(error);
     },
   });
-
   
-
   let component;
 
   if (loading) {
