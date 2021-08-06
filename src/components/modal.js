@@ -4,7 +4,7 @@ import React from 'react';
 import { Button, Modal } from 'semantic-ui-react'
 
 const  modal = (props) =>{
-  const {open, setOpen} = props;
+  const {open, setOpen, header, description} = props;
 
   return (
     <Modal
@@ -13,10 +13,10 @@ const  modal = (props) =>{
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
     >
-      <Modal.Header>Publicación guardada</Modal.Header>
+      <Modal.Header>{header}</Modal.Header>
       <Modal.Content>
         <Modal.Description>
-            Publicación creada exitosamente
+            {description}
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
