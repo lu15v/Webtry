@@ -7,6 +7,7 @@ import { useQuery, useMutation } from "@apollo/client";
 import Footer from "./footer";
 import Spinner from "./spinner";
 import moment from "moment";
+import avatar from "../assets/avatar.jpeg";
 
 import "../styles/poem-view.css";
 import { nanoid } from "nanoid";
@@ -58,7 +59,7 @@ const PoemView = () => {
           <div className="profile-container">
             <div className="photo-picture">
               <Image
-                src="https://miro.medium.com/fit/c/262/262/1*-AnRurxYM1u0PRMIR60Oyg.jpeg"
+                srcSet={avatar}
                 size="small"
               />
             </div>

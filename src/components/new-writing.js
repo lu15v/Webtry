@@ -61,7 +61,7 @@ const NewWriting = () => {
   return (
     <div className="writing-container">
       <div className="corral-writing">
-        {saved && <Modal open={open} setOpen={setOpen}/>}
+        {saved && <Modal open={open} setOpen={setOpen} header='Publicación guardada' description='Publicación creada exitosamente'/>}
         <h1>Las grandes ideas, comienzan siendo escritas</h1>
         <Form
           onSubmit={onSubmit}
