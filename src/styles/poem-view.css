@@ -10,10 +10,10 @@
   width: 100%;
   height: 26%;
   background-image: linear-gradient(to bottom, #0f100f82, #0f100f82),
-    url("https://i.stack.imgur.com/Bj4ge.png");
+    url("../assets/headerPicture.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   display: flex;
   flex-direction: column;
 }
